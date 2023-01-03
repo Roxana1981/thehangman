@@ -1,3 +1,5 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Game message
+print ("Welcome to The Hangman game")
+player = input("Enter your name please")
+print("Welcome" + player + "!" + "Let's start the game")
+print("Have fun")
