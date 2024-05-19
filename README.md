@@ -47,6 +47,14 @@ As part of project development there were 2 areas of testing completed:
 
 **Functional testing**
 
+The below testing was completed in terms of application functionality: 
+
+1. **Player name input** - it has been tested successfuly to confirm that player's name can be submitted and it will be displayed in the game message accordingly.
+2. **Player input** - it has been validated that the user input on the screen will be validated against letters included in the randomly selected word. Player's blank input is handled as an exception with relevant message displayed.
+   Any instances of player's duplicate letter input will be also handled with relavant message displayed.
+3. **Game progress**- it has been tested and validated that the game progress will update on the screen appropriately. If the user selects a correct letter it will be reflected on the game screen accordingly. In the event of player not selecting   a letter included in the word, the drawing of the hangman will progress.
+4. **Game outcome** - each game will be concluded either by the player winning or losing. A message is dispalyed for the player to opt between a retry or to terminate the game.
+
 **Code validation testing**
 
 Validation of the code was completed in Code Institute's Python Linter (URL https://pep8ci.herokuapp.com/)
