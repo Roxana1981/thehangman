@@ -1,6 +1,9 @@
 # The Hangman game application
+Online word guessing game. Simple and quick.
 
 Please click here [link](https://thehangman.herokuapp.com/) to access the game.
+
+![Main](assets/images/main.png)
 
 ## Project background 
 
@@ -19,9 +22,35 @@ random words with the help of external application connected to this application
 
 ## Application features
 
+The game and its key features have been outlined below.
+
+1. **Game Screen**- each online player is welcomed by game's initial screen and message.
+
+![Main](assets/images/main.png)
+
+2. **Player Name Input and Welcome Message**- before the game commences the player will be asked to input the name and related message is displayed.
+
+![Player](assets/images/player.png)
+
+3. **Game Progress**- as the player continues to guess the word the progress of the game is outlined on the screen accordingly.
+
+![Progress](assets/images/progress.png)
+
+4. **Game Outcome**- each game is either won or lost by the player with relevant message displayed by the application.
+
+![Outcome](assets/images/outcome.png)
+
+
 ## Testing 
 
 ## Future application enhancements
+
+Some of the potential future enhancements are as follows:
+
+1. The validation of the player input is currently limited to blank input and duplicate letter usage. In the event of input of non alphabetical character the validation error is not displayed.
+2. The application uses an external source to create random words. Perhaps some level of back-up will need to be arranged in case if the external random word selector is unavailable for whatever reason.
+3. The game display is quite basic and relies on simple keyboard characters. Introduction of some graphical elements could attract more players.
+4. At the present the players are provided with random words with no indicative of a specific thyme of the word. This makes the game at time difficult, therefore introduction of a thyme could help the players to be more successful in winning.
 
 **Bugs**
 
@@ -38,5 +67,9 @@ The application needed to be deployed to Heroku and the following steps were req
 7. When the application was deployed successfully, the URL for the application has become available in the Settings tab in Heroku.
 
 ## Credits
+
+1. The application uses external application to obtain randon words for each game. The source of random words is based in the following URL: https://random-word-api.herokuapp.com/word?number=1
+2. The project was influenced by some elements of the walk through project Love Sandwiches and a number of external projects, which had been researched and reviewed.
+
 
 
