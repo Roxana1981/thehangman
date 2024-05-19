@@ -7,8 +7,8 @@ print ("Welcome to The Hangman game")
 # Player name input section 
 player = input("Enter your name please: ")
 sleep(2)
-print("Welcome" + player + "!" + "Let's start the game")
-print("Have fun")
+print("Welcome " + player + "!" + " Let's start the game")
+print("Have fun!")
 sleep(2)
 
 # Hangman function 
@@ -24,7 +24,7 @@ def hangman():
     guess = guess.strip()
 # User input is validated for blank submissions
     if len(guess.strip()) == 0 and len(guess) != 1:
-        print("Incorrect input, please use letter instead\n")    
+        print("Incorrect input, please use a letter instead\n")    
         hangman()
 # User inpput is validated for duplicate letter selection
     elif guess in guessed:
@@ -59,7 +59,7 @@ def hangman():
                 "  |      \n"
                 "  |      \n"
                 "__|__\n")
-            print("Incorrect selection." + str(limit - count) + "selections left\n")
+            print("Incorrect selection. " + str(limit - count) + " selections left\n")
 
         elif count == 2:
             print("   _____ \n"
@@ -70,7 +70,7 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-            print("Incorrect selection." + str(limit - count) + "selections left\n")
+            print("Incorrect selection. " + str(limit - count) + " selections left\n")
         elif count == 3:
             print("   _____ \n"
                   "  |     | \n"
@@ -80,7 +80,7 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-            print("Incorrect selection." + str(limit - count) + "selections left\n")
+            print("Incorrect selection. " + str(limit - count) + " selections left\n")
         elif count == 4:
             print("   _____ \n"
                   "  |     | \n"
@@ -90,7 +90,7 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-            print("Incorrect selection." + str(limit - count) + "selections left\n")
+            print("Incorrect selection. " + str(limit - count) + " selection left\n")
         elif count == 5:
             print("   _____ \n"
                   "  |     | \n"
@@ -101,7 +101,7 @@ def hangman():
                   "  |    / \ \n"
                   "__|__\n")
             print("You did not guess it. I am sorry, You lost\n")
-            print("The correct word is:", word)
+            print("The correct word is: ", word)
             replay()
 
         if count != limit:
