@@ -53,7 +53,8 @@ The below testing was completed in terms of application functionality:
 2. **Player input** - it has been validated that the user input on the screen will be validated against letters included in the randomly selected word. Player's blank input is handled as an exception with relevant message displayed.
    Any instances of player's duplicate letter input will be also handled with relavant message displayed.
 3. **Game progress**- it has been tested and validated that the game progress will update on the screen appropriately. If the user selects a correct letter it will be reflected on the game screen accordingly. In the event of player not selecting   a letter included in the word, the drawing of the hangman will progress.
-4. **Game outcome** - each game will be concluded either by the player winning or losing. A message is dispalyed for the player to opt between a retry or to terminate the game.
+4. **Game outcome** - each game will be concluded either by the player winning or losing. A message is dispalyed for the player to opt between a retry or to terminate the game. It was observed during testing that at the time when the player    
+   guesses the correct word, the word itself does not get displayed in its entirety for the player to see. This was noted as an unfixed bug. 
 
 **Code validation testing**
 
