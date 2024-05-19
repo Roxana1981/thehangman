@@ -49,7 +49,7 @@ def hangman():
 # Visual display of the game progress when user misses selections
     else:
         count+=1
-
+        guessed.append(guess)
         if count==1:
             print("   _____ \n"
                 "  |      \n"
@@ -100,8 +100,8 @@ def hangman():
                   "  |    /|\ \n"
                   "  |    / \ \n"
                   "__|__\n")
-            print("You did not guess it. I am sorry, You lost\n")
-            print("The correct word is: ", word)
+            print("You did not guess it. I am sorry, you lost :(\n")
+            print("The correct word is:", word)
             replay()
 
         if count != limit:
@@ -111,9 +111,9 @@ def hangman():
 def replay():
 
     global play_game
-    play_game = input("Fancy playing again?Yes=y, No=n\n")
+    play_game = input("Fancy playing again? Yes=y, No=n\n")
     while play_game not in ["y", "n", "Y", "N"]:
-        play_game = input("Fancy playing again?Yes=y, No=n\n")
+        play_game = input("Fancy playing again? Yes=y, No=n\n")
     if play_game == "y":
         main()
     elif play_game == "n":
