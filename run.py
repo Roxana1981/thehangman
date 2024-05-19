@@ -17,15 +17,21 @@ def hangman():
     if len(guess.strip()) == 0 and len(guess) != 1:
         print("Incorrect Input, please use letter instead\n")    
         hangman()
-    
     elif guess in word:
-        guessed.extend([guess])
-        index = word.find(guess)
-        word = word[:index]+ "_" + word[index+1:]
-        display = display[:index] + guess + display[index+1:]
-        print(display+"\n")
-    elif guess in guessed:
-        print("You have already selected this letter.\n")
+        guessed.append(guess)
+        display = ""
+        for i in range(len(word)):
+            if (word[i] in guessed):
+                display += word[i]
+            else:
+                display += "_"
+            display += " "
+
+        if display.replace(" ", "") == word:
+            print("Great work, you guessed the word")
+            replay()
+
+        hangman()
 
     else:
         count+=1
