@@ -1,5 +1,5 @@
 # The Hangman game application
-Online word guessing game. Simple and quick.
+Online version of this quick and simnple word guessing game.
 
 Please click here [link](https://thehangman.herokuapp.com/) to access the game.
 
