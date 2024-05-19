@@ -113,3 +113,11 @@ def main():
     global guessed
     global length
     global play_game
+
+    # Game application will send GET request to the 
+    # below random word generator for purpose of 
+    # picking a selection of words needed for the game
+    data = urlopen("https://random-word-api.herokuapp.com/word?number=1")
+    data = data.read().decode('utf-8')
+    word = data[2:len(data)-2]
+    
