@@ -45,6 +45,13 @@ The game and its key features have been outlined below.
 
 ## Future application enhancements
 
+Some of the potential future enhancements are as follows:
+
+1. The validation of the player input is currently limited to blank input and duplicate letter usage. In the event of input of non alphabetical character the validation error is not displayed.
+2. The application uses an external source to create random words. Perhaps some level of back-up will need to be arranged in case if the external random word selector is unavailable for whatever reason.
+3. The game display is quite basic and relies on simple keyboard characters. Introduction of some graphical elements could attract more players.
+4. At the present the players are provided with random words with no indicative of a specific thyme of the word. This makes the game at time difficult, therefore introduction of a thyme could help the players to be more successful in winning.
+
 **Bugs**
 
 ## Deployment process 
