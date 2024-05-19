@@ -3,15 +3,16 @@ from urllib.request import urlopen
 
 
 # Game message
-print ("Welcome to The Hangman game")
-# Player name input section 
+print("Welcome to The Hangman game")
+# Player name input section
 player = input("Enter your name please: ")
 sleep(2)
 print("Welcome " + player + "!" + " Let's start the game")
 print("Have fun!")
 sleep(2)
 
-# Hangman function 
+
+# Hangman function
 def hangman():
 
     global count
@@ -24,7 +25,7 @@ def hangman():
     guess = guess.strip()
 # User input is validated for blank submissions
     if len(guess.strip()) == 0 and len(guess) != 1:
-        print("Incorrect input, please use a letter instead\n")    
+        print("Incorrect input, please use a letter instead\n")
         hangman()
 # User inpput is validated for duplicate letter selection
     elif guess in guessed:
@@ -48,18 +49,19 @@ def hangman():
         hangman()
 # Visual display of the game progress when user misses selections
     else:
-        count+=1
+        count += 1
         guessed.append(guess)
-        if count==1:
+        if count == 1:
             print("   _____ \n"
-                "  |      \n"
-                "  |      \n"
-                "  |      \n"
-                "  |      \n"
-                "  |      \n"
-                "  |      \n"
-                "__|__\n")
-            print("Incorrect selection. " + str(limit - count) + " selections left\n")
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Incorrect selection. " + str(limit - count) +
+                  " selections left\n")
 
         elif count == 2:
             print("   _____ \n"
@@ -70,7 +72,8 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-            print("Incorrect selection. " + str(limit - count) + " selections left\n")
+            print("Incorrect selection. " + str(limit - count) +
+                  " selections left\n")
         elif count == 3:
             print("   _____ \n"
                   "  |     | \n"
@@ -80,7 +83,8 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-            print("Incorrect selection. " + str(limit - count) + " selections left\n")
+            print("Incorrect selection. " + str(limit - count) +
+                  " selections left\n")
         elif count == 4:
             print("   _____ \n"
                   "  |     | \n"
@@ -90,13 +94,14 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-            print("Incorrect selection. " + str(limit - count) + " selection left\n")
+            print("Incorrect selection. " + str(limit - count) +
+                  " selection left\n")
         elif count == 5:
             print("   _____ \n"
-                  "  |     | \n"
-                  "  |     |\n"
-                  "  |     | \n"
-                  "  |     O \n"
+                  "  |     |  \n"
+                  "  |     |  \n"
+                  "  |     |  \n"
+                  "  |     O  \n"
                   "  |    /|\ \n"
                   "  |    / \ \n"
                   "__|__\n")
@@ -106,6 +111,7 @@ def hangman():
 
         if count != limit:
             hangman()
+
 
 # Game function to repeat play process
 def replay():
@@ -120,6 +126,7 @@ def replay():
         print("Thanks for playing and see you!")
         exit()
 
+
 # Main function of the game
 def main():
     global count
@@ -129,8 +136,8 @@ def main():
     global length
     global play_game
 
-    # Game application will send GET request to the 
-    # below random word generator for purpose of 
+    # Game application will send GET request to the
+    # below random word generator for purpose of
     # picking a selection of words needed for the game
     data = urlopen("https://random-word-api.herokuapp.com/word?number=1")
     data = data.read().decode('utf-8')
@@ -140,6 +147,7 @@ def main():
     display = '_ ' * length
     guessed = []
     play_game = ""
+
 
 main()
 
