@@ -83,6 +83,7 @@ Some of the potential future enhancements are as follows:
 
 - at the present validation of player input, which is non alphabetical is not handled by the application correctly.
 - at the end of the game player selection, which is not either Y or N, does not display any validation related message.
+- when the player guesses the word correctly, the actual complete word is not displayed for the player on the screen. The code will need to be enhanced to display the guessed word entirely.
 
 ## Deployment process 
 
