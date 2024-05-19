@@ -31,16 +31,61 @@ def hangman():
         count+=1
 
         if count==1:
-        print("   _____ \n"
-              "  |      \n"
-              "  |      \n"
-              "  |      \n"
-              "  |      \n"
-              "  |      \n"
-              "  |      \n"
-              "__|__\n")
-        print("Incorrect guess." + str(limit - count) + "guesses left\n")
+            print("   _____ \n"
+                "  |      \n"
+                "  |      \n"
+                "  |      \n"
+                "  |      \n"
+                "  |      \n"
+                "  |      \n"
+                "__|__\n")
+            print("Incorrect selection." + str(limit - count) + "selections left\n")
 
+        elif count == 2:
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Incorrect selection." + str(limit - count) + "selections left\n")
+        elif count == 3:
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Incorrect selection." + str(limit - count) + "selections left\n")
+        elif count == 4:
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |     O \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Incorrect selection." + str(limit - count) + "selections left\n")
+        elif count == 5:
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |     O \n"
+                  "  |    /|\ \n"
+                  "  |    / \ \n"
+                  "__|__\n")
+            print("You did not guess it. I am sorry, You lost\n")
+            print("The correct word is:", word)
+            replay()
+
+        if count != limit:
+            hangman()
 
 
 def replay():
