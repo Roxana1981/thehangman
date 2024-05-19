@@ -22,6 +22,25 @@ random words with the help of external application connected to this application
 
 ## Application features
 
+The game and its key features have been outlined below.
+
+1. **Game Screen**- each online player is welcomed by game's initial screen and message.
+
+![Main](assets/images/main.png)
+
+2. **Player Name Input and Welcome Message**- before the game commences the player will be asked to input the name and related message is displayed.
+
+![Player](assets/images/player.png)
+
+3. **Game Progress**- as the player continues to guess the word the progress of the game is outlined on the screen accordingly.
+
+![Progress](assets/images/progress.png)
+
+4. **Game Outcome**- each game is either won or lost by the player with relevant message displayed by the application.
+
+![Outcome](assets/images/outcome.png)
+
+
 ## Testing 
 
 ## Future application enhancements
