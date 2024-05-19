@@ -4,6 +4,8 @@ Please click here [link](https://thehangman.herokuapp.com/) to access the game.
 
 ## Project background 
 
+The Hangman game was created as part of Milestone project 3. The functionality of the game was developed using Python. The application targets broad population of online users who would like to play a simple game of words guessing, known as The Hangman.
+
 ## Application design
 
 ## Application features
