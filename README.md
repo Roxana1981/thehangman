@@ -43,6 +43,14 @@ The game and its key features have been outlined below.
 
 ## Testing 
 
+As part of project development there were 2 areas of testing completed:
+
+**Functional testing**
+
+**Code validation testing**
+
+
+
 ## Future application enhancements
 
 Some of the potential future enhancements are as follows:
