@@ -25,7 +25,7 @@ def hangman():
     guess = guess.strip()
 # User input is validated for blank submissions
     if len(guess.strip()) == 0 and len(guess) != 1:
-        print("Incorrect input, please use a letter instead\n")
+        print("Blank input, please select a letter\n")
         hangman()
 # User inpput is validated for duplicate letter selection
     elif guess in guessed:
