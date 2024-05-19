@@ -52,7 +52,17 @@ Some of the potential future enhancements are as follows:
 3. The game display is quite basic and relies on simple keyboard characters. Introduction of some graphical elements could attract more players.
 4. At the present the players are provided with random words with no indicative of a specific thyme of the word. This makes the game at time difficult, therefore introduction of a thyme could help the players to be more successful in winning.
 
-**Bugs**
+## Bugs ## 
+
+**Fixed Bugs**
+
+- at some stage during the development it was identified that the duplicate letter by the player did not have any message displayed unless the letter was contained within the word. This was subsequently resolved and now each duplicate
+  letter selection is highlighted through a game message accordingly.
+
+**Unfixed Bugs**
+
+- at the present validation of player input, which is non alphabetical is not handled by the application correctly.
+- at the end of the game player selection, which is not either Y or N, does not display any validation related message.
 
 ## Deployment process 
 
