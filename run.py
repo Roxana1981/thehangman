@@ -26,6 +26,9 @@ def hangman():
     if len(guess.strip()) == 0 and len(guess) != 1:
         print("Incorrect Input, please use letter instead\n")    
         hangman()
+    elif guess in guessed:
+        print("You have already selected this letter.\n")
+        hangman()
     elif guess in word:
         guessed.append(guess)
         display = ""
