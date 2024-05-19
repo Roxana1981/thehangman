@@ -1,9 +1,13 @@
+from time import sleep
+
+
 # Game message
 print ("Welcome to The Hangman game")
 player = input("Enter your name please: ")
+sleep(2)
 print("Welcome" + player + "!" + "Let's start the game")
 print("Have fun")
-
+sleep(2)
 
 def hangman():
 
@@ -120,4 +124,3 @@ def main():
     data = urlopen("https://random-word-api.herokuapp.com/word?number=1")
     data = data.read().decode('utf-8')
     word = data[2:len(data)-2]
-    
