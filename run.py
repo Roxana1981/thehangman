@@ -91,7 +91,9 @@ def hangman():
 def replay():
 
 def main():
-    count
-    display
-    word
-    guessed
+    global count
+    global display
+    global word
+    global guessed
+    global length
+    global play_game
