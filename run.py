@@ -15,7 +15,11 @@ def hangman():
     """
     Game logic function
     """
-
+    global count
+    global display
+    global word
+    global guessed
+    global play_game
     limit = 5
     guess = input("Your selected word is:" + display + "Take a guess:\n")
     guess = guess.strip()
@@ -125,3 +129,12 @@ def main():
     data = urlopen("https://random-word-api.herokuapp.com/word?number=1")
     data = data.read().decode('utf-8')
     word = data[2:len(data)-2]
+    length = len(word)
+    count = 0
+    display = '_ ' * length
+    guessed = []
+    play_game = ""
+
+main()
+
+hangman()
