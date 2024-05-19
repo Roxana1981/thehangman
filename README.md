@@ -49,6 +49,10 @@ As part of project development there were 2 areas of testing completed:
 
 **Code validation testing**
 
+Validation of the code was completed in Code Institute's Python Linter (URL https://pep8ci.herokuapp.com/)
+As part of validation 2 instances of invalid escape sequence were observed in line 105 and 106 of the code.
+
+![Code](assets/images/code.png)
 
 
 ## Future application enhancements
