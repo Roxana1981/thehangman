@@ -72,6 +72,7 @@ Some of the potential future enhancements are as follows:
 2. The application uses an external source to create random words. Perhaps some level of back-up will need to be arranged in case if the external random word selector is unavailable for whatever reason.
 3. The game display is quite basic and relies on simple keyboard characters. Introduction of some graphical elements could attract more players.
 4. At the present the players are provided with random words with no indicative of a specific thyme of the word. This makes the game at time difficult, therefore introduction of a thyme could help the players to be more successful in winning.
+5. As the game progresses and the player may know the word, the game application should for the player to input the complete word instead adding individual letters.
 
 ## Bugs ## 
 
