@@ -90,6 +90,16 @@ def hangman():
 
 def replay():
 
+    global play_game
+    play_game = input("Fancy playing again?Yes=y, No=n\n")
+    while play_game not in ["y", "n", "Y", "N"]:
+        play_game = input("Fancy playing again?Yes=y, No=n\n")
+    if play_game == "y":
+        main()
+    elif play_game == "n":
+        print("Thanks for playing and see you!")
+        exit()
+
 def main():
     global count
     global display
