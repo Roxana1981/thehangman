@@ -61,4 +61,8 @@ The application needed to be deployed to Heroku and the following steps were req
 
 ## Credits
 
+1. The application uses external application to obtain randon words for each game. The source of random words is based in the following URL: https://random-word-api.herokuapp.com/word?number=1
+2. The project was influenced by some elements of the walk through project Love Sandwiches and a number of external projects, which had been researched and reviewed.
+
+
 
