@@ -4,17 +4,16 @@ from urllib.request import urlopen
 
 # Game message
 print ("Welcome to The Hangman game")
+# Player name input section 
 player = input("Enter your name please: ")
 sleep(2)
 print("Welcome" + player + "!" + "Let's start the game")
 print("Have fun")
 sleep(2)
 
+# Hangman function 
 def hangman():
 
-    """
-    Game logic function
-    """
     global count
     global display
     global word
@@ -23,9 +22,11 @@ def hangman():
     limit = 5
     guess = input("Your selected word is:" + display + "Take a guess:\n")
     guess = guess.strip()
+# User input is validated for blank submissions
     if len(guess.strip()) == 0 and len(guess) != 1:
-        print("Incorrect Input, please use letter instead\n")    
+        print("Incorrect input, please use letter instead\n")    
         hangman()
+# User inpput is validated for duplicate letter selection
     elif guess in guessed:
         print("You have already selected this letter.\n")
         hangman()
@@ -33,6 +34,7 @@ def hangman():
         guessed.append(guess)
         display = ""
         for i in range(len(word)):
+            # Loop for the user section with actual word
             if (word[i] in guessed):
                 display += word[i]
             else:
@@ -44,7 +46,7 @@ def hangman():
             replay()
 
         hangman()
-
+# Visual display of the game progress when user misses selections
     else:
         count+=1
 
@@ -105,7 +107,7 @@ def hangman():
         if count != limit:
             hangman()
 
-
+# Game function to repeat play process
 def replay():
 
     global play_game
@@ -118,6 +120,7 @@ def replay():
         print("Thanks for playing and see you!")
         exit()
 
+# Main function of the game
 def main():
     global count
     global display
