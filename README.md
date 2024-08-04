@@ -1,7 +1,7 @@
 # The Hangman game application
 Online version of this quick and simnple word guessing game.
 
-Please click here [link](https://thehangman.herokuapp.com/) to access the game.
+Please click here [link](https://thehangman-422749aac0f2.herokuapp.com/) to access the game.
 
 ![Main](assets/images/main.png)
 
