@@ -109,18 +109,43 @@ def hangman(guess_count: int, display: str, word: str, guessed: set):
         hangman(guess_count, display, word, guessed)
 
 
-# Game function to repeat play process
+## Game function to repeat play process
 def replay():
+    play_game = input("Fancy playing again? Yes=y, No=n\n").lower()
 
-    global play_game
-    play_game = input("Fancy playing again? Yes=y, No=n\n")
-    while play_game not in ["y", "n", "Y", "N"]:
+    while play_game not in ["y", "n"]:
         play_game = input("Fancy playing again? Yes=y, No=n\n")
+
     if play_game == "y":
-        main()
+        initiate_new_game()
     elif play_game == "n":
         print("Thanks for playing and see you!")
-        exit()
+
+
+def get_random_word() -> str:
+    # This function will send GET request to the
+    # random word generator API for purpose of
+    # picking a selection of words needed for the game
+    raw_data = urlopen(RANDOM_WORD_API_URL)
+    decoded_data = raw_data.read().decode("utf-8")
+    json_data = json.loads(decoded_data)
+    word = json_data[0]
+    return word.lower()
+
+
+def initiate_new_game():
+    try:
+        word = get_random_word()
+    except (urllib.error.URLError, urllib.error.HTTPError):
+        print("The game is unable to run due to an API failure")
+        return
+
+    hangman(
+        guess_count=0,
+        display='_ ' * len(word),
+        word=word,
+        guessed=set()
+    )
 
 
 # Main function of the game
