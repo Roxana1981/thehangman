@@ -45,6 +45,9 @@ HANGMAN_STAGES = [
     "  |    / \\ \n"
     "__|__\n"
 ]
+GUESS_LIMIT = len(HANGMAN_STAGES)
+RANDOM_WORD_API_URL = "https://random-word-api.herokuapp.com/word?number=1"
+
 
 # Game message
 print("Welcome to The Hangman game")
