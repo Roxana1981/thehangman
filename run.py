@@ -49,16 +49,6 @@ GUESS_LIMIT = len(HANGMAN_STAGES)
 RANDOM_WORD_API_URL = "https://random-word-api.herokuapp.com/word?number=1"
 
 
-# Game message
-print("Welcome to The Hangman game")
-# Player name input section
-player = input("Enter your name please: ")
-sleep(2)
-print("Welcome " + player + "!" + " Let's start the game")
-print("Have fun!")
-sleep(2)
-
-
 # Hangman function
 def hangman(guess_count: int, display: str, word: str, guessed: set):
     guess = input(f"Your selected word is: {display} Take a guess:\n")
