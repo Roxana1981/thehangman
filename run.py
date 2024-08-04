@@ -148,28 +148,20 @@ def initiate_new_game():
     )
 
 
-# Main function of the game
+## Main function of the game
 def main():
-    global count
-    global display
-    global word
-    global guessed
-    global length
-    global play_game
+    # Player name input section
+    player = input("Enter your name please: ")
+    sleep(0.5)
 
-    # Game application will send GET request to the
-    # below random word generator for purpose of
-    # picking a selection of words needed for the game
-    data = urlopen("https://random-word-api.herokuapp.com/word?number=1")
-    data = data.read().decode('utf-8')
-    word = data[2:len(data)-2]
-    length = len(word)
-    count = 0
-    display = '_ ' * length
-    guessed = []
-    play_game = ""
+    # Welcome message
+    print("Welcome " + player + "!" + " Let's start the hangman game")
+    sleep(0.5)
+    print(f"You have {GUESS_LIMIT} one letter guesses to find out a random word")
+    print("Have fun!")
+
+    initiate_new_game()
 
 
-main()
-
-hangman()
+if __name__ == '__main__':
+    main()
