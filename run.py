@@ -1,6 +1,50 @@
+import json
+import urllib
 from time import sleep
 from urllib.request import urlopen
 
+HANGMAN_STAGES = [
+    "   _____ \n"
+    "  |      \n"
+    "  |      \n"
+    "  |      \n"
+    "  |      \n"
+    "  |      \n"
+    "  |      \n"
+    "__|__\n",
+    "   _____ \n"
+    "  |     | \n"
+    "  |     |\n"
+    "  |      \n"
+    "  |      \n"
+    "  |      \n"
+    "  |      \n"
+    "__|__\n",
+    "   _____ \n"
+    "  |     | \n"
+    "  |     |\n"
+    "  |     | \n"
+    "  |      \n"
+    "  |      \n"
+    "  |      \n"
+    "__|__\n",
+    "   _____ \n"
+    "  |     | \n"
+    "  |     |\n"
+    "  |     | \n"
+    "  |     O \n"
+    "  |      \n"
+    "  |      \n"
+    "__|__\n",
+    "   _____ \n"
+    "  |     |  \n"
+    "  |     |  \n"
+    "  |     |  \n"
+    "  |     O  \n"
+    "  |    /|\\ \n"
+    "  |    / \\ \n"
+    "__|__\n"
+]
 
 # Game message
 print("Welcome to The Hangman game")
@@ -102,8 +146,8 @@ def hangman():
                   "  |     |  \n"
                   "  |     |  \n"
                   "  |     O  \n"
-                  "  |    /|\ \n"
-                  "  |    / \ \n"
+                  "  |    /|\\ \n"
+                  "  |    / \\ \n"
                   "__|__\n")
             print("You did not guess it. I am sorry, you lost :(\n")
             print("The correct word is:", word)
