@@ -57,104 +57,56 @@ sleep(2)
 
 
 # Hangman function
-def hangman():
+def hangman(guess_count: int, display: str, word: str, guessed: set):
+    guess = input(f"Your selected word is: {display} Take a guess:\n")
+    guess = guess.strip().lower()
 
-    global count
-    global display
-    global word
-    global guessed
-    global play_game
-    limit = 5
-    guess = input("Your selected word is:" + display + "Take a guess:\n")
-    guess = guess.strip()
-# User input is validated for blank submissions
-    if len(guess.strip()) == 0 and len(guess) != 1:
+    # User input is validated for blank submissions
+    if len(guess) == 0:
         print("Blank input, please select a letter\n")
-        hangman()
-# User inpput is validated for duplicate letter selection
+        hangman(guess_count, display, word, guessed)
+
+    # User input is validated against game rules
+    elif len(guess) > 1 or not guess.isalpha():
+        print("Invalid input, make sure to enter one letter\n")
+        hangman(guess_count, display, word, guessed)
+
+    # User input is validated for duplicate letter selection
     elif guess in guessed:
         print("You have already selected this letter.\n")
-        hangman()
+        hangman(guess_count, display, word, guessed)
+
     elif guess in word:
-        guessed.append(guess)
-        display = ""
+        guessed.add(guess)
+        new_display = ""
+
         for i in range(len(word)):
             # Loop for the user section with actual word
-            if (word[i] in guessed):
-                display += word[i]
+            if word[i] in guessed:
+                new_display += word[i]
             else:
-                display += "_"
-            display += " "
+                new_display += "_"
+            new_display += " "
 
-        if display.replace(" ", "") == word:
+        if new_display.replace(" ", "") == word:
             print("Great work, you guessed the word")
             replay()
 
-        hangman()
-# Visual display of the game progress when user misses selections
-    else:
-        count += 1
-        guessed.append(guess)
-        if count == 1:
-            print("   _____ \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "__|__\n")
-            print("Incorrect selection. " + str(limit - count) +
-                  " selections left\n")
+        hangman(guess_count, new_display, word, guessed)
 
-        elif count == 2:
-            print("   _____ \n"
-                  "  |     | \n"
-                  "  |     |\n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "__|__\n")
-            print("Incorrect selection. " + str(limit - count) +
-                  " selections left\n")
-        elif count == 3:
-            print("   _____ \n"
-                  "  |     | \n"
-                  "  |     |\n"
-                  "  |     | \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "__|__\n")
-            print("Incorrect selection. " + str(limit - count) +
-                  " selections left\n")
-        elif count == 4:
-            print("   _____ \n"
-                  "  |     | \n"
-                  "  |     |\n"
-                  "  |     | \n"
-                  "  |     O \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "__|__\n")
-            print("Incorrect selection. " + str(limit - count) +
-                  " selection left\n")
-        elif count == 5:
-            print("   _____ \n"
-                  "  |     |  \n"
-                  "  |     |  \n"
-                  "  |     |  \n"
-                  "  |     O  \n"
-                  "  |    /|\\ \n"
-                  "  |    / \\ \n"
-                  "__|__\n")
+    # Visual display of the game progress when user misses selections
+    else:
+        if guess_count == GUESS_LIMIT:
+            print(HANGMAN_STAGES[guess_count - 1])
             print("You did not guess it. I am sorry, you lost :(\n")
             print("The correct word is:", word)
-            replay()
+            return replay()
 
-        if count != limit:
-            hangman()
+        guess_count += 1
+        guessed.add(guess)
+        print(HANGMAN_STAGES[guess_count - 1])
+        print(f"Incorrect selection. {GUESS_LIMIT - guess_count} selection left\n")
+        hangman(guess_count, display, word, guessed)
 
 
 # Game function to repeat play process
