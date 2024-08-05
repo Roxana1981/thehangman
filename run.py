@@ -89,13 +89,13 @@ def hangman(guess_count: int, display: str, word: str, guessed: set):
 
     # Visual display of the game progress when user misses selections
     else:
+        guess_count += 1
         if guess_count == GUESS_LIMIT:
             print(HANGMAN_STAGES[guess_count - 1])
             print("You did not guess it. I am sorry, you lost :(\n")
             print("The correct word is:", word)
             return replay()
 
-        guess_count += 1
         guessed.add(guess)
         print(HANGMAN_STAGES[guess_count - 1])
         print(f"Incorrect selection. {GUESS_LIMIT - guess_count} selection left\n")
