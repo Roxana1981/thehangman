@@ -25,8 +25,9 @@ random words with the help of external application connected to this application
 The game and its key features have been outlined below.
 
 1. **Game Screen**- each online player is welcomed by game's initial screen and message.
+   On the screen there is also the name of the previous person who played the game. Googlesheets API has been setup to support this functionality.
 
-![Main](assets/images/main.png)
+![Main](assets/images/main1.png)
 
 2. **Player Name Input and Welcome Message**- before the game commences the player will be asked to input the name and related message is displayed.
 
@@ -49,12 +50,13 @@ As part of project development there were 2 areas of testing completed:
 
 The below testing was completed in terms of application functionality: 
 
-1. **Player name input** - it has been tested successfuly to confirm that player's name can be submitted and it will be displayed in the game message accordingly.
+1. **Player name input** - it has been tested successfuly to confirm that player's name can be submitted and it will be displayed in the game message accordingly. 
 2. **Player input** - it has been tested that the user input on the screen will be validated against letters included in the randomly selected word. Player's blank and non alphabetical inputs are validated, with relevant message displayed.
    Any instances of player's duplicate letter input (i.e letter already selected) will be also handled with relavant message displayed.
-5. **Game progress**- it has been tested and validated that the game progress will update on the screen appropriately. If the user selects a correct letter it will be reflected on the game screen accordingly. In the event of player not selecting   a letter included in the word, the drawing of the hangman will progress.
-6. **Game outcome** - each game will be concluded either by the player winning or losing. A message is dispalyed for the player to opt between a retry or to terminate the game. It was observed during testing that at the time when the player    
-   guesses the correct word, the word itself does not get displayed in its entirety for the player to see. This was noted as an unfixed bug. 
+3. **Game progress**- it has been tested and validated that the game progress will update on the screen appropriately. If the user selects a correct letter it will be reflected on the game screen accordingly. In the event of player not selecting   a letter included in the word, the drawing of the hangman will progress.
+4. **Game outcome** - each game will be concluded either by the player winning or losing. A message is dispalyed for the player to opt between a retry or to terminate the game. It was observed during testing that at the time when the player    
+   guesses the correct word, the word itself does not get displayed in its entirety for the player to see. This was noted as an unfixed bug.
+5. **Previous player name** - it was also tested that the previous player's name is also stored correctly in googlesheets and displayed to the next player.
 
 **Code validation testing**
 
