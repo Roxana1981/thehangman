@@ -4,6 +4,21 @@ from time import sleep
 from typing import Callable
 from urllib.request import urlopen
 import gspread
+import os
+
+gpsread_credentials = {
+    "type": os.getenv("type"),
+    "project_id": os.getenv("project_id"),
+    "private_key_id": os.getenv("private_key_id"),
+    "private_key": os.getenv("private_key"),
+    "client_email": os.getenv("client_email"),
+    "client_id": os.getenv("client_id"),
+    "auth_uri": os.getenv("auth_uri"),
+    "token_uri": os.getenv("token_uri"),
+    "auth_provider_x509_cert_url": os.getenv("auth_provider_x509_cert_url"),
+    "client_x509_cert_url": os.getenv("client_x509_cert_url"),
+    "universe_domain": os.getenv("universe_domain")
+}
 
 # Visual display of the game progress when user misses selections
 HANGMAN_STAGES = [
@@ -166,7 +181,7 @@ def print_last_player_name_if_exists(worksheet: gspread.Worksheet):
 # calls given function passing worksheet into it and closes the connection.
 # Function catches related exceptions and provides information for the user.
 def execute_gspread_operation(callback: Callable[[gspread.Worksheet], None]):
-    gc = gspread.service_account("service_account.json")
+    gc = gspread.service_account_from_dict(gpsread_credentials)
     try:
         worksheet = gc.open("thehangman").get_worksheet(0)
 
