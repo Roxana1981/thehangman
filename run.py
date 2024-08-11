@@ -47,6 +47,7 @@ HANGMAN_STAGES = [
     "__|__\n"
 ]
 GUESS_LIMIT = len(HANGMAN_STAGES)
+# External app for unlimited word selection needed for the game
 RANDOM_WORD_API_URL = "https://random-word-api.herokuapp.com/word?number=1"
 
 
