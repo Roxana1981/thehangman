@@ -50,16 +50,16 @@ As part of project development there were 2 areas of testing completed:
 The below testing was completed in terms of application functionality: 
 
 1. **Player name input** - it has been tested successfuly to confirm that player's name can be submitted and it will be displayed in the game message accordingly.
-2. **Player input** - it has been validated that the user input on the screen will be validated against letters included in the randomly selected word. Player's blank input is handled as an exception with relevant message displayed.
-   Any instances of player's duplicate letter input will be also handled with relavant message displayed.
-3. **Game progress**- it has been tested and validated that the game progress will update on the screen appropriately. If the user selects a correct letter it will be reflected on the game screen accordingly. In the event of player not selecting   a letter included in the word, the drawing of the hangman will progress.
-4. **Game outcome** - each game will be concluded either by the player winning or losing. A message is dispalyed for the player to opt between a retry or to terminate the game. It was observed during testing that at the time when the player    
+2. **Player input** - it has been tested that the user input on the screen will be validated against letters included in the randomly selected word. Player's blank and non alphabetical inputs are validated, with relevant message displayed.
+   Any instances of player's duplicate letter input (i.e letter already selected) will be also handled with relavant message displayed.
+5. **Game progress**- it has been tested and validated that the game progress will update on the screen appropriately. If the user selects a correct letter it will be reflected on the game screen accordingly. In the event of player not selecting   a letter included in the word, the drawing of the hangman will progress.
+6. **Game outcome** - each game will be concluded either by the player winning or losing. A message is dispalyed for the player to opt between a retry or to terminate the game. It was observed during testing that at the time when the player    
    guesses the correct word, the word itself does not get displayed in its entirety for the player to see. This was noted as an unfixed bug. 
 
 **Code validation testing**
 
 Validation of the code was completed in Code Institute's Python Linter (URL https://pep8ci.herokuapp.com/)
-As part of validation 2 instances of invalid escape sequence were observed in line 105 and 106 of the code.
+The code has successfully passed the valiation.
 
 ![Code](assets/images/code1.png)
 
@@ -68,24 +68,24 @@ As part of validation 2 instances of invalid escape sequence were observed in li
 
 Some of the potential future enhancements are as follows:
 
-1. The validation of the player input is currently limited to blank input and duplicate letter usage. In the event of input of non alphabetical character the validation error is not displayed.
-2. The application uses an external source to create random words. Perhaps some level of back-up will need to be arranged in case if the external random word selector is unavailable for whatever reason.
-3. The game display is quite basic and relies on simple keyboard characters. Introduction of some graphical elements could attract more players.
-4. At the present the players are provided with random words with no indicative of a specific thyme of the word. This makes the game at time difficult, therefore introduction of a thyme could help the players to be more successful in winning.
-5. As the game progresses and the player may know the word, the game application should for the player to input the complete word instead adding individual letters.
+1. The application uses an external source to create random words. Perhaps some level of back-up will need to be arranged in case if the external random word selector is unavailable for whatever reason.
+2. The game display is quite basic and relies on simple keyboard characters. Introduction of some graphical elements could attract more players.
+3. At the present the players are provided with random words with no indicative of a specific thyme of the word. This makes the game at time difficult, therefore introduction of a thyme could help the players to be more successful in winning.
+4. As the game progresses and the player may know the word, the game application should allow for the player to input the complete word instead adding individual letters.
+5. Allow the players to select difficulty level of the game so that the word selection is adequate to the level played.
 
 ## Bugs ## 
 
 **Fixed Bugs**
 
-- at some stage during the development it was identified that the duplicate letter by the player did not have any message displayed unless the letter was contained within the word. This was subsequently resolved and now each duplicate
+- At some stage during the development it was identified that the duplicate letter by the player did not have any message displayed unless the letter was contained within the word. This was subsequently resolved and now each duplicate
   letter selection is highlighted through a game message accordingly.
-
+- The validation of the player input was initially limited to blank input, duplicate (already selected) letter input. Now the non alphabetical or 2 characters are also validated, with relevant user message displayed.
+  
 **Unfixed Bugs**
 
-- at the present validation of player input, which is non alphabetical is not handled by the application correctly.
-- at the end of the game player selection, which is not either Y or N, does not display any validation related message.
-- when the player guesses the word correctly, the actual complete word is not displayed for the player on the screen. The code will need to be enhanced to display the guessed word entirely.
+- At the end of the game player selection, which is not either Y or N, does not display any validation related message.
+- When the player guesses the word correctly, the actual complete word is not displayed for the player on the screen. The code will need to be enhanced to display the guessed word entirely.
 
 ## Deployment process 
 
