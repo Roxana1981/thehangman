@@ -73,6 +73,7 @@ Some of the potential future enhancements are as follows:
 3. At the present the players are provided with random words with no indicative of a specific thyme of the word. This makes the game at time difficult, therefore introduction of a thyme could help the players to be more successful in winning.
 4. As the game progresses and the player may know the word, the game application should allow for the player to input the complete word instead adding individual letters.
 5. Allow the players to select difficulty level of the game so that the word selection is adequate to the level played.
+6. Add scoreboard with best players' names.
 
 ## Bugs ## 
 
