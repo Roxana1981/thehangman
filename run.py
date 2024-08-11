@@ -147,11 +147,13 @@ def initiate_new_game():
     )
 
 
+# Updates first cell in spreadsheet with player's name
 def set_new_last_player_name(worksheet: gspread.Worksheet):
     global player_name
     worksheet.update_acell("A1", player_name)
 
 
+# Shows last player's name
 def print_last_player_name_if_exists(worksheet: gspread.Worksheet):
     last_player_name = worksheet.acell("A1").value
     if last_player_name is not None:
@@ -160,6 +162,9 @@ def print_last_player_name_if_exists(worksheet: gspread.Worksheet):
         print("You are the first player!")
 
 
+# Establishes Google Spreadsheet API connection,
+# calls given function passing worksheet into it and closes the connection.
+# Function catches related exceptions and provides information for the user.
 def execute_gspread_operation(callback: Callable[[gspread.Worksheet], None]):
     gc = gspread.service_account("service_account.json")
     try:
