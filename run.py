@@ -3,6 +3,7 @@ import urllib
 from time import sleep
 from urllib.request import urlopen
 
+# Visual display of the game progress when user misses selections
 HANGMAN_STAGES = [
     "   _____ \n"
     "  |      \n"
@@ -59,7 +60,7 @@ def hangman(guess_count: int, display: str, word: str, guessed: set):
         print("Blank input, please select a letter\n")
         hangman(guess_count, display, word, guessed)
 
-    # User input is validated against game rules
+    # User input is validated against multiple letters and non alpha characters
     elif len(guess) > 1 or not guess.isalpha():
         print("Invalid input, make sure to enter one letter\n")
         hangman(guess_count, display, word, guessed)
@@ -87,7 +88,6 @@ def hangman(guess_count: int, display: str, word: str, guessed: set):
 
         hangman(guess_count, new_display, word, guessed)
 
-    # Visual display of the game progress when user misses selections
     else:
         guess_count += 1
         if guess_count == GUESS_LIMIT:
@@ -98,11 +98,12 @@ def hangman(guess_count: int, display: str, word: str, guessed: set):
 
         guessed.add(guess)
         print(HANGMAN_STAGES[guess_count - 1])
-        print(f"Incorrect selection. {GUESS_LIMIT - guess_count} selection left\n")
+        print(f"Incorrect selection. {GUESS_LIMIT - guess_count}",
+              "selection left\n")
         hangman(guess_count, display, word, guessed)
 
 
-## Game function to repeat play process
+# Game function to repeat play process
 def replay():
     play_game = input("Fancy playing again? Yes=y, No=n\n").lower()
 
@@ -141,7 +142,7 @@ def initiate_new_game():
     )
 
 
-## Main function of the game
+# Main function of the game
 def main():
     # Player name input section
     player = input("Enter your name please: ")
@@ -150,7 +151,8 @@ def main():
     # Welcome message
     print("Welcome " + player + "!" + " Let's start the hangman game")
     sleep(0.5)
-    print(f"You have {GUESS_LIMIT} one letter guesses to find out a random word")
+    print(f"You have {GUESS_LIMIT} one letter guesses",
+          "to find out a random word")
     print("Have fun!")
 
     initiate_new_game()
