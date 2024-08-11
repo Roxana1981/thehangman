@@ -1,7 +1,9 @@
 import json
 import urllib
 from time import sleep
+from typing import Callable
 from urllib.request import urlopen
+import gspread
 
 # Visual display of the game progress when user misses selections
 HANGMAN_STAGES = [
@@ -49,6 +51,7 @@ HANGMAN_STAGES = [
 GUESS_LIMIT = len(HANGMAN_STAGES)
 # External app for unlimited word selection needed for the game
 RANDOM_WORD_API_URL = "https://random-word-api.herokuapp.com/word?number=1"
+player_name = ""
 
 
 # Hangman function
@@ -135,6 +138,7 @@ def initiate_new_game():
         print("The game is unable to run due to an API failure")
         return
 
+    execute_gspread_operation(set_new_last_player_name)
     hangman(
         guess_count=0,
         display='_ ' * len(word),
@@ -143,14 +147,47 @@ def initiate_new_game():
     )
 
 
+def set_new_last_player_name(worksheet: gspread.Worksheet):
+    global player_name
+    worksheet.update_acell("A1", player_name)
+
+
+def print_last_player_name_if_exists(worksheet: gspread.Worksheet):
+    last_player_name = worksheet.acell("A1").value
+    if last_player_name is not None:
+        print("Last player's name:", last_player_name)
+    else:
+        print("You are the first player!")
+
+
+def execute_gspread_operation(callback: Callable[[gspread.Worksheet], None]):
+    gc = gspread.service_account("service_account.json")
+    try:
+        worksheet = gc.open("thehangman").get_worksheet(0)
+
+        callback(worksheet)
+    except gspread.exceptions.SpreadsheetNotFound:
+        print("Google Spreadsheet does not exist")
+    except gspread.exceptions.APIError as e:
+        print("Google API Error", e)
+    except gspread.exceptions.GSpreadException as e:
+        print("GSpread Exception", e)
+    finally:
+        gc.http_client.session.close()
+
+
 # Main function of the game
 def main():
+    global player_name
+
+    execute_gspread_operation(print_last_player_name_if_exists)
+
     # Player name input section
-    player = input("Enter your name please: ")
+    player_name = input("Enter your name please: ")
     sleep(0.5)
 
     # Welcome message
-    print("Welcome " + player + "!" + " Let's start the hangman game")
+    print("Welcome " + player_name + "!" + " Let's start the hangman game")
     sleep(0.5)
     print(f"You have {GUESS_LIMIT} one letter guesses",
           "to find out a random word")
